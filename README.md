@@ -11,3 +11,17 @@ REPORT_GAS=true npx hardhat test
 npx hardhat node
 npx hardhat run scripts/deploy.js
 ```
+
+The difference between contract NFT & NFT2 is :
+
+```js
+// NFT
+function setNotRevealedURI() public onlyOwner {
+    notRevealedUri = "https://erc721Upgradeable.com/";
+}
+
+// NFT2
+function setNotRevealedURI(string memory _notRevealedURI) public onlyOwner {
+    notRevealedUri = _notRevealedURI;
+}
+```
